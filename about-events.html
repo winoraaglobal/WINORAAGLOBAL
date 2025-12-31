@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Winoraa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="html/9de873c6-f123-4fe2-b479-7ce689765505_removalai_preview.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #DDE3E9;
+            /* Light grey background from image */
+            color: #333;
+        }
+
+        /* Navbar specific for this dark page */
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-logo h1 a {
+            color: #fff !important;
+        }
+
+        .nav-link {
+            color: #ccc !important;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .about-events-hero {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0 120px;
+            position: relative;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            margin-bottom: 0;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            /* Increased from 0.9rem */
+            letter-spacing: 6px;
+            /* Increased from 4px */
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            /* Slightly more margin */
+            font-weight: 700;
+            /* Slightly bolder */
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .hero-title .solid {
+            color: #fff;
+        }
+
+        .hero-title .outline {
+            color: transparent;
+            -webkit-text-stroke: 2px #fff;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: #4dabf7;
+            /* Blue */
+            padding: 60px 0;
+            text-align: center;
+            margin-top: -60px;
+            /* Overlap with hero */
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+            /* Compensate for overlap */
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-number.outline {
+            color: transparent;
+            -webkit-text-stroke: 2px #1a1a1a;
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .intro-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            flex: 0 0 200px;
+            margin-top: 10px;
+        }
+
+        .intro-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            line-height: 1.3;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: none;
+            /* Reset cap style */
+            flex: 1;
+        }
+
+        .highlight-green {
+            color: #4dabf7;
+            /* Blue */
+        }
+
+        @media (max-width: 768px) {
+            .about-events-hero {
+                border-bottom-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                padding: 80px 0;
+                /* Tighten hero padding on mobile */
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+                /* Scaled down for mobile */
+                letter-spacing: 4px !important;
+                margin-bottom: 15px !important;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .stat-item {
+                flex: 1 1 100%;
+                /* Stack on mobile */
+            }
+
+            .intro-section {
+                flex-direction: column;
+            }
+
+            .intro-label {
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+                font-weight: 900;
+            }
+
+            .intro-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Services List Section */
+        /* Services List Section - Modern Grid Redesign */
+        .services-list-section {
+            padding: 40px 20px 80px;
+            max-width: 1000px;
+            /* Increased max-width */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .end-to-end {
+            color: #4dabf7;
+            /* Blue consistent */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            /* Larger title */
+            font-weight: 800;
+            margin-bottom: 50px;
+            display: block;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            /* Soft shadow */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Bouncy transition */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(77, 171, 247, 0.2);
+            /* Blue shadow on hover */
+            border-color: #4dabf7;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #4dabf7;
+            /* Blue */
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            /* Circle shape for realistic icon look */
+            margin-bottom: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item:hover .service-icon-img {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(77, 171, 247, 0.4);
+        }
+
+        .service-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .service-item:hover .service-text {
+            color: #000;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            padding: 60px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .expertise-left {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .expertise-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+
+        .expertise-sub {
+            font-size: 1.3rem;
+            color: #4dabf7;
+            /* Blue */
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .expertise-list-item {
+            display: block;
+            padding: 18px 25px;
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 15px;
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .expertise-list-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #4dabf7;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .expertise-list-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(77, 171, 247, 0.2);
+            padding-left: 35px;
+        }
+
+        .expertise-list-item:hover::after {
+            width: 100%;
+            opacity: 0.1;
+            /* Subtle highlight background */
+        }
+
+        .expertise-list-item::before {
+            content: '➔';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4dabf7;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-list-item:hover::before {
+            left: 15px;
+            opacity: 1;
+        }
+
+        .expertise-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .expertise-img {
+            width: 100%;
+            border-radius: 4px;
+            /* Minimal radius */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar"> <!-- Reusing existing classes for dark bg if needed, or just navbar -->
+        <div class="nav-container">
+            <div class="nav-logo" style="align-items: center;">
+                <h1><a href="index.html" style="text-decoration: none; color: #fff !important;">WINORAA GLOBAL</a></h1>
+                <p class="nav-tagline"
+                    style="color: rgba(255, 255, 255, 0.7); text-align: center; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+                    Events and Experiences</p>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about-events.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-events-hero">
+        <div class="container">
+            <span class="hero-subtitle" data-aos="fade-down" data-aos-delay="100">OUR AGENCY</span>
+            <h1 class="hero-title">
+                <span class="solid" data-aos="zoom-in" data-aos-delay="300">ABOUT</span>
+                <span class="outline" data-aos="zoom-in" data-aos-delay="500">US</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="700">
+                <span class="stat-number"><span class="counter" data-target="50">0</span>+</span>
+                <span class="stat-label">PROJECTS</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="900">
+                <span class="stat-number outline"><span class="counter" data-target="100">0</span>+</span>
+                <span class="stat-label">CLIENTS</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="1100">
+                <span class="stat-number"><span class="counter" data-target="3">0</span>+</span>
+                <span class="stat-label">YEARS OF EXPERIENCE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Text -->
+    <section class="intro-section">
+        <div class="intro-label" data-aos="fade-right">ABOUT WINORAA GLOBAL</div>
+        <p class="intro-text" data-aos="fade-up" data-aos-delay="200">
+
+            <span
+                style="display: block; font-size: 1.8rem; line-height: 1.5; margin-top: 30px; font-weight: 800; font-family: 'Montserrat', sans-serif;">
+                Winoraa Global is a premier <span class="highlight-green">Pan-India</span> event solutions provider,
+                redefining <span class="highlight-green">experiential marketing</span> through innovative <span
+                    class="highlight-green">stall design</span>, large-scale <span class="highlight-green">corporate
+                    events</span>, and <span class="highlight-green">immersive exhibitions</span>. With strategic
+                warehousing in <span class="highlight-green">Delhi, Mumbai, and Bengaluru</span>, we execute seamless,
+                high-impact experiences that bridge the physical and digital worlds.
+            </span>
+        </p>
+    </section>
+
+    <!-- Services List -->
+    <section class="services-list-section">
+        <h3 class="end-to-end" style="color: #1a1a1a; margin-bottom: 5px;">End-to-End</h3>
+        <span class="end-to-end">Expertise In</span>
+
+        <div class="service-list">
+            <div class="service-item" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Meetings" class="service-icon-img">
+                <span class="service-text">Meetings & Conferences</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Travel" class="service-icon-img">
+                <span class="service-text">Experiential And Incentive Travel</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Virtual Events" class="service-icon-img">
+                <span class="service-text">Physical And Virtual Events</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Gifting" class="service-icon-img">
+                <span class="service-text">Gifting Solutions</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Digital" class="service-icon-img">
+                <span class="service-text">Digital Campaigns</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="500">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Program Management" class="service-icon-img">
+                <span class="service-text">Program Management</span>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="600">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=200&h=200&q=80"
+                    alt="Stall Fabrication" class="service-icon-img">
+                <span class="service-text">Stall Fabrication And Designing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="expertise-left" data-aos="fade-right">
+            <h2 class="expertise-title">EXPERTISE</h2>
+            <p class="expertise-sub">OUR ASSET IS OUR EXPERIENCED TEAM</p>
+
+            <span class="expertise-list-item" data-aos="fade-right" data-aos-delay="100">Concept & Content
+                Development</span>
+            <span class="expertise-list-item" data-aos="fade-right" data-aos-delay="200">Creative Design 2D & 3D</span>
+            <span class="expertise-list-item" data-aos="fade-right" data-aos-delay="300">Production & Operations</span>
+            <span class="expertise-list-item" data-aos="fade-right" data-aos-delay="400">Sound / Light / Video /
+                Technical</span>
+            <span class="expertise-list-item" data-aos="fade-right" data-aos-delay="500">Artists & Entertainment</span>
+        </div>
+        <div class="expertise-right" data-aos="zoom-in" data-aos-duration="1000">
+            <video src="videos/38891aec559ab7c71fd7a16cbecc7b74.mp4" class="expertise-img" autoplay muted loop
+                playsinline preload="auto">
+                <source src="videos/38891aec559ab7c71fd7a16cbecc7b74.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Bar (replicates the dark footer in image) -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section dark-section">
+        <div class="container">
+            <div class="contact-content-landscape">
+                <div class="contact-header-landscape">
+                    <div class="contact-tagline" data-aos="fade-down" data-aos-delay="0">GET IN TOUCH</div>
+                    <h2 class="contact-title-landscape">
+                        <div class="title-line">
+                            <span class="title-large" data-aos="fade-up" data-aos-delay="100">YOUR</span>
+                        </div>
+                        <div class="title-line">
+                            <span class="event-text" data-aos="fade-up" data-aos-delay="200">EVENT</span>
+                            <span class="event-bold" data-aos="fade-up" data-aos-delay="300">EVENT</span>
+                            <span class="event-text" data-aos="fade-up" data-aos-delay="400">EVENT</span>
+                        </div>
+                        <div class="title-line">
+                            <span class="title-large" data-aos="fade-up" data-aos-delay="500">OUR</span>
+                            <span class="title-large" data-aos="fade-up" data-aos-delay="600">EXPERTISE</span>
+                        </div>
+                    </h2>
+                    <button class="contact-cta-btn" data-aos="fade-up" data-aos-delay="700"
+                        onclick="window.location.href='contact.html'">
+                        CONTACT US →
+                    </button>
+                </div>
+
+                <div class="contact-social-landscape" data-aos="fade-up" data-aos-delay="800">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-links-landscape">
+                        <a href="https://www.instagram.com/winoraa_global?igsh=M3ZxdDlvZzBpZW52" target="_blank"
+                            class="social-link-landscape" data-aos="zoom-in" data-aos-delay="900"
+                            aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/winoraa-global-events-and-experience/" target="_blank"
+                            class="social-link-landscape" data-aos="zoom-in" data-aos-delay="1000"
+                            aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Winoraa</h3>
+                    <p>Creating unforgettable experiences through world-class event production.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">MICE</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#services">Digital services</a></li>
+                        <li><a href="index.html#services">Corporate Gifting</a></li>
+                        <li><a href="index.html#services">Employee Engagement</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#careers">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Mail us</h4>
+                    <div class="social-links">
+                        <a href="mailto:winoraaglobal@gmail.com">winoraaglobal@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Winoraa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Number Counting Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    // Lower increment to make it consistent across different magnitudes
+                    // or calculate based on target to finish at same time
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20); // updates every 20ms
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Trigger animation when stats section is in view
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add a small delay to sync with AOS fade-up
+                    setTimeout(animateCounters, 500);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-bar').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

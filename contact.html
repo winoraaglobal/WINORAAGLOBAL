@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Winoraa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Winoraa</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Let's Create Something Amazing Together</h1>
+            <p>Ready to bring your event vision to life? Get in touch with our team and let's discuss how we can make your next event unforgettable.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Get In Touch</h2>
+                    <p>We're here to help you create extraordinary events. Whether you're planning a music festival, corporate gathering, or intimate celebration, our team is ready to bring your vision to life.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <div class="method-content">
+                                <h3>Email Us</h3>
+                                <p>hello@winoraa.com</p>
+                                <p>info@winoraa.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <div class="method-content">
+                                <h3>Call Us</h3>
+                                <p>Main: (555) 123-4567</p>
+                                <p>Emergency: (555) 987-6543</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">📍</div>
+                            <div class="method-content">
+                                <h3>Visit Us</h3>
+                                <p>123 Music Avenue<br>Austin, TX 78701<br>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">🕒</div>
+                            <div class="method-content">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-container">
+                        <h2>Send Us a Message</h2>
+                        <form class="contact-form-main">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="eventType">Event Type</label>
+                                <select id="eventType" name="eventType">
+                                    <option value="">Select Event Type</option>
+                                    <option value="music-festival">Music Festival</option>
+                                    <option value="corporate-event">Corporate Event</option>
+                                    <option value="private-celebration">Private Celebration</option>
+                                    <option value="sporting-event">Sporting Event</option>
+                                    <option value="cultural-event">Cultural Event</option>
+                                    <option value="virtual-hybrid">Virtual/Hybrid Event</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventDate">Preferred Event Date</label>
+                                    <input type="date" id="eventDate" name="eventDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="budget">Estimated Budget</label>
+                                    <select id="budget" name="budget">
+                                        <option value="">Select Budget Range</option>
+                                        <option value="under-10k">Under $10,000</option>
+                                        <option value="10k-25k">$10,000 - $25,000</option>
+                                        <option value="25k-50k">$25,000 - $50,000</option>
+                                        <option value="50k-100k">$50,000 - $100,000</option>
+                                        <option value="100k-250k">$100,000 - $250,000</option>
+                                        <option value="250k-500k">$250,000 - $500,000</option>
+                                        <option value="over-500k">Over $500,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tell us about your event vision *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Describe your event goals, expected attendance, venue preferences, and any specific requirements..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" value="yes">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for event industry insights and updates
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <h3>Winoraa Headquarters</h3>
+                    <p>123 Music Avenue, Austin, TX 78701</p>
+                    <p>Located in the heart of Austin's vibrant music district</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How far in advance should I book your services?</h3>
+                    <p>We recommend booking at least 3-6 months in advance for large events, though we can accommodate shorter timelines depending on availability and event complexity.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you provide services outside of Texas?</h3>
+                    <p>Yes! While we're based in Austin, we provide event production services nationwide and have experience with international events as well.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What's included in your event production services?</h3>
+                    <p>Our services include event planning, venue coordination, audio/visual production, marketing, logistics, security, and post-event analysis. We customize packages based on your specific needs.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can you help with event marketing and promotion?</h3>
+                    <p>Absolutely! We offer comprehensive marketing services including brand development, digital marketing, social media management, and PR to maximize your event's reach and impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Winoraa</h3>
+                    <p>Creating unforgettable experiences through world-class event production.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Music Festivals</a></li>
+                        <li><a href="#">Corporate Events</a></li>
+                        <li><a href="#">Event Production</a></li>
+                        <li><a href="#">Marketing Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Winoraa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
