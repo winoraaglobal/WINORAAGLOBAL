@@ -11,7 +11,6 @@ The contact section has been completely updated with the new WINORAA GLOBAL cont
 
 ### Phone Numbers:
 - 📞 **Vivek:** +91 95935 51959 (with phone icon)
-- 📞 **Aryan:** +91 92116 25066 (with phone icon)
 
 ### Locations:
 - 📍 **Location:** Delhi & Bengaluru (with location pin icon)
@@ -43,7 +42,6 @@ The contact section has been completely updated with the new WINORAA GLOBAL cont
 ```
 📧 Email: winoraaglobal@gmail.com
 📞 Vivek: +91 95935 51959
-📞 Aryan: +91 92116 25066
 📍 Location: Delhi & Bengaluru
 🏢 Warehouse: Delhi, Bengaluru & Mumbai
 ```
@@ -63,14 +61,13 @@ The contact section has been completely updated with the new WINORAA GLOBAL cont
 
 ### Phone Number Links:
 - **Vivek's number**: Clickable on mobile devices
-- **Aryan's number**: Clickable on mobile devices
 - **Email address**: Opens email client on mobile
 - **Professional formatting**: Easy to read and use
 
 ## 🎯 BENEFITS:
 
 ### Professional Presentation:
-- ✅ **Multiple contact options** - Email and two phone numbers
+- ✅ **Multiple contact options** - Email and phone number
 - ✅ **Geographic presence** - Shows national coverage
 - ✅ **Warehouse network** - Demonstrates logistics capability
 - ✅ **Professional contacts** - Named individuals for personal touch
