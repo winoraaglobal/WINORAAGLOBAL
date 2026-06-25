@@ -160,10 +160,10 @@ export default function CareersSection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-[650px] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col z-10"
+              className="relative w-full max-w-[650px] max-h-[95vh] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col z-10"
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-[#163399] to-[#254fbe] p-6 md:p-10 relative overflow-hidden flex flex-col items-center text-center">
+              <div className="bg-gradient-to-r from-[#163399] to-[#254fbe] p-6 md:p-10 relative overflow-hidden flex-shrink-0 flex flex-col items-center text-center">
                 {/* Decorative circles */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl"></div>
@@ -181,7 +181,7 @@ export default function CareersSection() {
               </div>
 
               {/* Form Body */}
-              <div className="p-6 md:p-10">
+              <div className="p-6 md:p-10 overflow-y-auto flex-1">
                 <form onSubmit={handleApplySubmit} className="flex flex-col gap-6">
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
