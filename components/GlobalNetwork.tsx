@@ -93,9 +93,9 @@ const Marker = ({ name, coords, radius, globeMeshRef }: { name: string, coords: 
         <meshBasicMaterial color="#8cc63f" transparent opacity={1} side={THREE.DoubleSide} />
       </mesh>
 
-      <Html distanceFactor={15} center occlude={[globeMeshRef]} zIndexRange={[100, 0]}>
-        <div className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full shadow-lg text-[7px] font-[800] uppercase tracking-[0.15em] text-white border border-white/20 whitespace-nowrap mt-4 pointer-events-none flex items-center gap-1 transition-transform">
-          <div className="w-[3px] h-[3px] rounded-full bg-[#8cc63f] shadow-[0_0_3px_#8cc63f] animate-pulse"></div>
+      <Html distanceFactor={8} center occlude={[globeMeshRef]} zIndexRange={[100, 0]}>
+        <div className="bg-black/75 backdrop-blur-md px-2 py-0.5 rounded-full shadow-lg text-[6px] font-[800] uppercase tracking-widest text-white border border-white/10 whitespace-nowrap mt-4 pointer-events-none flex items-center gap-1 transition-transform">
+          <div className="w-[3px] h-[3px] rounded-full bg-[#8cc63f] shadow-[0_0_4px_#8cc63f]"></div>
           {name}
         </div>
       </Html>
@@ -148,8 +148,8 @@ const Globe = () => {
         const projection = d3.geoEquirectangular().translate([2048, 1024]).scale(651.8986);
         const path = d3.geoPath().projection(projection).context(context);
 
-        // Elegant light blue-grey ocean
-        context.fillStyle = "#eaf0f6";
+        // Deep, rich ocean color for high contrast
+        context.fillStyle = "#cce0ff";
         context.fillRect(0, 0, 4096, 2048);
 
         data.features.forEach((feature: any) => {
@@ -159,13 +159,13 @@ const Globe = () => {
           context.beginPath();
           path(feature);
           
-          // Crisp landmasses, vibrant brand blue highlights
+          // Crisp white landmasses, vibrant brand blue for highlighted
           context.fillStyle = highlighted ? "#1a5ab5" : "#ffffff";
           context.fill();
 
-          // Refined borders
-          context.strokeStyle = highlighted ? "#124285" : "#d1d9e6";
-          context.lineWidth = highlighted ? 2 : 1;
+          // Stronger borders so continents are clearly visible
+          context.strokeStyle = highlighted ? "#124285" : "#a3c2f0";
+          context.lineWidth = highlighted ? 2 : 1.5;
           context.stroke();
         });
 
@@ -253,7 +253,8 @@ const GlobalNetwork = () => {
         className="relative w-full max-w-[1200px] h-[330px] md:h-[520px] lg:h-[680px] mt-10 md:mt-[60px] z-10 flex-1 flex items-center justify-center mb-[60px]"
       >
         <Canvas 
-          camera={{ position: [0, 0, 15], fov: 45 }}
+          key="globe-canvas-v2"
+          camera={{ position: [0, 0, 11], fov: 35 }}
           className="w-full h-full cursor-grab active:cursor-grabbing"
           dpr={[1, 2]}
         >
