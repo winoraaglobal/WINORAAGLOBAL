@@ -145,7 +145,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
-          className="w-full bg-[#000000] pt-12 md:pt-[92px] pb-[36px] relative z-20"
+          className="w-full bg-[#000000] pt-12 md:pt-[92px] pb-[96px] md:pb-[36px] relative z-20"
         >
           <div className="max-w-[1160px] mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -240,10 +240,9 @@ const Footer = () => {
           {/* Floating Button */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
-            className="absolute right-4 bottom-4 md:right-[24px] md:bottom-[32px] lg:right-[34px] lg:bottom-[32px] z-50"
+            className="fixed right-4 bottom-4 md:right-[24px] md:bottom-[32px] lg:right-[34px] lg:bottom-[32px] z-[90]"
           >
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -285,7 +284,7 @@ const Footer = () => {
                 
                 <button 
                   onClick={() => setIsModalOpen(false)}
-                  className="absolute top-6 right-6 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-all hover:rotate-90 duration-300"
+                  className="absolute top-6 right-6 w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hover:rotate-90 duration-300 z-20"
                 >
                   <X size={20} />
                 </button>
@@ -392,7 +391,7 @@ const Footer = () => {
 
                 <button 
                   onClick={() => setIsContactModalOpen(false)}
-                  className="absolute top-5 right-5 bg-black/20 hover:bg-black/40 text-white rounded-full transition-all duration-300 p-2 hover:rotate-90 backdrop-blur-md"
+                  className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center bg-black/20 hover:bg-black/40 text-white rounded-full transition-all duration-300 hover:rotate-90 backdrop-blur-md z-20"
                 >
                   <X size={18} strokeWidth={2.5} />
                 </button>

@@ -2,12 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
     num: "01",
     title: "CORPORATE CONFERENCES",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "Large-scale conferences",
       "Professional stage design",
@@ -19,7 +20,7 @@ const services = [
   {
     num: "02",
     title: "EXHIBITIONS & TRADE SHOWS",
-    image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "World-class exhibition management",
       "Custom booth design",
@@ -31,7 +32,7 @@ const services = [
   {
     num: "03",
     title: "PRODUCT LAUNCHES",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "Spectacular launch events",
       "Cutting-edge lighting",
@@ -43,7 +44,7 @@ const services = [
   {
     num: "04",
     title: "AWARD NIGHTS & GALAS",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "Elegant award ceremonies",
       "Premium production quality",
@@ -55,7 +56,7 @@ const services = [
   {
     num: "05",
     title: "DEALER MEETS & INCENTIVES",
-    image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "Strategic dealer engagement",
       "Incentive programs",
@@ -67,7 +68,7 @@ const services = [
   {
     num: "06",
     title: "LARGE-SCALE MICE EVENTS",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1200&auto=format&fit=crop",
     bullets: [
       "Meetings & Conferences",
       "Incentive Tours",
@@ -104,10 +105,15 @@ export default function ServicesSection() {
             className="group relative w-full min-h-[400px] h-auto md:h-[460px] lg:h-[500px] rounded-[8px] overflow-hidden bg-black shadow-lg"
           >
             {/* Background Image */}
-            <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
-              style={{ backgroundImage: `url('${service.image}')` }}
-            />
+            <div className="absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-110">
+              <Image 
+                src={service.image} 
+                alt={service.title} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
             
             {/* Dark Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/10 transition-colors duration-500 group-hover:from-black group-hover:via-black/60 group-hover:to-black/30 z-10" />

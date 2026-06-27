@@ -196,7 +196,6 @@ const Globe = () => {
     <group ref={globeRef} rotation={[0, -Math.PI / 2, 0]} scale={scale}>
 
 
-      {/* Main Vector Globe */}
       {globeTexture && (
         <mesh ref={meshRef}>
           <sphereGeometry args={[radius, 128, 128]} />

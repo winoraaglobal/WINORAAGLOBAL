@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutHeroSection() {
   return (
@@ -13,13 +14,16 @@ export default function AboutHeroSection() {
         animate={{ scale: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
         className="absolute inset-0 w-full h-full z-0"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop')",
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          filter: "grayscale(100%) brightness(0.8)"
-        }}
-      />
+      >
+        <Image
+          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600&auto=format&fit=crop"
+          alt="Background"
+          fill
+          className="object-cover object-center"
+          style={{ filter: "grayscale(100%) brightness(0.8)" }}
+          sizes="100vw"
+        />
+      </motion.div>
       
       {/* Rich dark overlay to fix washed-out look */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#101828]/60 via-[#0a0f1a]/80 to-[#050505]" />

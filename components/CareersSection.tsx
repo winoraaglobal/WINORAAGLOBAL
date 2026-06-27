@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 export default function CareersSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,10 +79,15 @@ export default function CareersSection() {
     <section className="relative w-full min-h-[600px] lg:min-h-[805px] py-12 lg:py-24 overflow-hidden flex flex-col justify-center">
       
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop')" }}
-      />
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1600&auto=format&fit=crop"
+          alt="Careers Background"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
       
       {/* Heavy Dark Overlay */}
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.84)' }} />

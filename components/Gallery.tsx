@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const GALLERY_IMAGES = [
   { id: 1, src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop", fullSrc: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=100&w=2000&auto=format&fit=crop", alt: "Corporate Event Setup", category: "Corporate" },
@@ -116,9 +117,11 @@ export default function Gallery() {
                   className="group relative cursor-pointer overflow-hidden rounded-xl bg-white/5"
                   onClick={() => setSelectedImage(img)}
                 >
-                  <img
+                  <Image
                     src={img.src}
                     alt={img.alt}
+                    width={800}
+                    height={600}
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
                     loading="lazy"
                   />
@@ -167,9 +170,11 @@ export default function Gallery() {
               className="relative max-w-7xl max-h-[85vh] w-full flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={selectedImage.fullSrc}
                 alt={selectedImage.alt}
+                width={2000}
+                height={1500}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
               />
               <div className="mt-6 text-center">

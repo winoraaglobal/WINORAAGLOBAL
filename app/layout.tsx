@@ -20,8 +20,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "FATHOM | FESTIVAL HAUS - Cinematic Experience",
-  description: "Pixel-perfect clone of the Fathom Producers website.",
+  title: "Winoraa Global",
+  description: "Winoraa Global - Events and Experiences",
 };
 
 export default function RootLayout({
