@@ -7,12 +7,11 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "#about" },
-  { label: "SERVICES", href: "#services" },
-  { label: "EVENTS", href: "#events" },
+  { label: "ABOUT", href: "/#about" },
+  { label: "SERVICES", href: "/#services" },
   { label: "GALLERY", href: "/gallery" },
   { label: "CAREERS", href: "/careers" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "CONTACT", href: "/#contact" },
 ];
 
 const Navbar = () => {

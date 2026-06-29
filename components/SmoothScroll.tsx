@@ -2,8 +2,11 @@
 
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import { usePathname } from "next/navigation";
 
 const SmoothScroll = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -23,10 +26,20 @@ const SmoothScroll = () => {
 
     requestAnimationFrame(raf);
 
+    // Scroll to hash if present after route change
+    if (window.location.hash) {
+      setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          lenis.scrollTo(target as HTMLElement, { offset: 0 });
+        }
+      }, 500); // 500ms delay to ensure page elements are fully mounted
+    }
+
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 };

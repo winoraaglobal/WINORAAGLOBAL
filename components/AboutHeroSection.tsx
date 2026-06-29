@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AboutHeroSection() {
   return (
-    <section className="relative w-full min-h-[600px] lg:min-h-[760px] flex items-center justify-center overflow-hidden py-24">
+    <section id="about" className="relative w-full min-h-[600px] lg:min-h-[760px] flex items-center justify-center overflow-hidden py-24">
       
       {/* Background Image Layer */}
       <motion.div 

@@ -193,7 +193,7 @@ const Globe = () => {
   ], []);
 
   return (
-    <group ref={globeRef} rotation={[0, -Math.PI / 2, 0]} scale={scale}>
+    <group ref={globeRef} rotation={[0, -Math.PI, 0]} scale={scale}>
 
 
       {globeTexture && (
