@@ -176,9 +176,15 @@ const Footer = () => {
               >
                 <h4 className="text-[#163399] text-[18px] font-[800] mb-[22px]">Services</h4>
                 <div className="flex flex-col">
-                  {['MICE', 'Events', 'Digital services', 'Corporate Gifting', 'Employee Engagement'].map((link) => (
-                    <Link key={link} href="#" className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors">
-                      {link}
+                  {[
+                    { label: 'MICE', href: '/#services' },
+                    { label: 'Events', href: '/#services' },
+                    { label: 'Digital services', href: '/#services' },
+                    { label: 'Corporate Gifting', href: '/#services' },
+                    { label: 'Employee Engagement', href: '/#services' }
+                  ].map((item) => (
+                    <Link key={item.label} href={item.href} className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors">
+                      {item.label}
                     </Link>
                   ))}
                 </div>
@@ -194,9 +200,13 @@ const Footer = () => {
               >
                 <h4 className="text-[#163399] text-[18px] font-[800] mb-[22px]">Company</h4>
                 <div className="flex flex-col">
-                  {['About Us', 'Careers', 'Contact'].map((link) => (
-                    <Link key={link} href="#" className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors">
-                      {link}
+                  {[
+                    { label: 'About Us', href: '/#about' },
+                    { label: 'Careers', href: '/careers' },
+                    { label: 'Contact', href: '/#contact' }
+                  ].map((item) => (
+                    <Link key={item.label} href={item.href} className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors">
+                      {item.label}
                     </Link>
                   ))}
                 </div>
