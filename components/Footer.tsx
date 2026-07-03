@@ -15,6 +15,8 @@ const Footer = () => {
   const bgColor = pathname === '/' ? '#d3d6da' : 'transparent';
 
   useEffect(() => {
+    const handleOpenContactModal = () => setIsContactModalOpen(true);
+    
     const handleHashChange = () => {
       if (window.location.hash === '#contact') {
         setIsContactModalOpen(true);
@@ -23,8 +25,12 @@ const Footer = () => {
     
     handleHashChange(); // Check on mount
 
+    window.addEventListener('openContactModal', handleOpenContactModal);
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('openContactModal', handleOpenContactModal);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const closeContactModal = () => {
@@ -225,7 +231,17 @@ const Footer = () => {
                     { label: 'Careers', href: '/careers' },
                     { label: 'Contact', href: '/#contact' }
                   ].map((item) => (
-                    <Link key={item.label} href={item.href} className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors">
+                    <Link 
+                      key={item.label} 
+                      href={item.href} 
+                      className="text-white text-[17px] leading-[2] hover:text-[#91bf3e] transition-colors"
+                      onClick={(e) => {
+                        if (item.href === '/#contact') {
+                          e.preventDefault();
+                          setIsContactModalOpen(true);
+                        }
+                      }}
+                    >
                       {item.label}
                     </Link>
                   ))}

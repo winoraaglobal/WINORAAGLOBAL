@@ -54,7 +54,16 @@ const Navbar = () => {
           <div className="flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="relative group flex items-center gap-1">
-                <Link href={item.href} className="nav-link text-sm font-bold tracking-wide text-white drop-shadow-md hover:text-[#91bf3e] transition-colors">
+                <Link 
+                  href={item.href} 
+                  className="nav-link text-sm font-bold tracking-wide text-white drop-shadow-md hover:text-[#91bf3e] transition-colors"
+                  onClick={(e) => {
+                    if (item.href === '/#contact') {
+                      e.preventDefault();
+                      window.dispatchEvent(new CustomEvent('openContactModal'));
+                    }
+                  }}
+                >
                   {item.label}
                 </Link>
               </div>
@@ -103,7 +112,13 @@ const Navbar = () => {
                 key={item.label} 
                 href={item.href} 
                 className="text-white text-xl md:text-2xl font-black tracking-[0.2em] uppercase hover:text-[#91bf3e] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  if (item.href === '/#contact') {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent('openContactModal'));
+                  }
+                }}
               >
                 {item.label}
               </Link>
