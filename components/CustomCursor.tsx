@@ -44,7 +44,7 @@ export default function CustomCursor() {
     <>
       {/* Small dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-[#91bf3e] rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_#91bf3e]"
+        className="fixed top-0 left-0 w-3 h-3 bg-[#91bf3e] rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_#91bf3e] hidden md:block"
         style={{
           opacity: isVisible ? 1 : 0,
         }}
@@ -62,7 +62,7 @@ export default function CustomCursor() {
 
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[9998] flex items-center justify-center"
+        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[9998] hidden md:flex items-center justify-center"
         style={{
           opacity: isVisible ? 1 : 0,
         }}
@@ -72,7 +72,6 @@ export default function CustomCursor() {
           scale: isHovering ? 1.5 : 1,
           border: isHovering ? "1px solid rgba(145, 191, 62, 0.2)" : "1px solid rgba(145, 191, 62, 0.5)",
           backgroundColor: isHovering ? "rgba(145, 191, 62, 0.1)" : "rgba(0, 0, 0, 0)",
-          backdropFilter: isHovering ? "blur(4px)" : "blur(0px)",
         }}
         transition={{
           type: "spring",
