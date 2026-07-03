@@ -23,7 +23,11 @@ const Footer = () => {
       }
     };
     
-    handleHashChange(); // Check on mount
+    // If the URL has #contact on initial load, remove it so it doesn't stay stuck in the URL.
+    // We intentionally do NOT open the modal on initial load.
+    if (window.location.hash === '#contact') {
+      window.history.replaceState("", document.title, window.location.pathname + window.location.search);
+    }
 
     window.addEventListener('openContactModal', handleOpenContactModal);
     window.addEventListener('hashchange', handleHashChange);
