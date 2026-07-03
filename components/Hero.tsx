@@ -3,21 +3,16 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
-const CountUp = ({ value, duration = 2 }: { value: number; duration?: number }) => {
+const CountUp = ({ value, duration = 2, delay = 0 }: { value: number; duration?: number; delay?: number }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest: number) => Math.round(latest));
-  const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    const controls = animate(count, value, { duration, ease: "easeOut" });
+    const controls = animate(count, value, { duration, delay, ease: "easeOut" });
     return controls.stop;
-  }, [count, value, duration]);
+  }, [count, value, duration, delay]);
 
-  useEffect(() => {
-    return rounded.on("change", (v: number) => setDisplayValue(v));
-  }, [rounded]);
-
-  return <span>{displayValue}</span>;
+  return <motion.span>{rounded}</motion.span>;
 };
 
 const Hero = () => {
@@ -57,7 +52,7 @@ const Hero = () => {
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center">
                 <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-1 md:mb-2 tracking-tight">
-                  <CountUp value={stat.val} />+
+                  <CountUp value={stat.val} delay={1.0} />+
                 </span>
                 <span className="text-[9px] md:text-[10px] tracking-[0.3em] font-semibold text-white/80 uppercase">
                   {stat.label}
