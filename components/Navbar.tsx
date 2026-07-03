@@ -86,7 +86,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-xl flex flex-col p-6 md:hidden">
+        <div className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-xl flex flex-col p-6 lg:hidden">
           <div className="flex justify-end mb-12">
             <button 
               className="text-white p-2 hover:rotate-90 transition-transform duration-300"
