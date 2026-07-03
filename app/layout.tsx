@@ -6,6 +6,7 @@ import Overlays from "@/components/Overlays";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const permanentMarker = Permanent_Marker({ 
@@ -31,7 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${permanentMarker.variable} ${montserrat.variable} antialiased bg-black text-white overflow-x-hidden`}>
+      <body className={`${inter.variable} ${permanentMarker.variable} ${montserrat.variable} antialiased bg-black text-white overflow-x-hidden cursor-none`}>
+        <CustomCursor />
         <LoadingScreen />
         <SmoothScroll />
         <Navbar />
