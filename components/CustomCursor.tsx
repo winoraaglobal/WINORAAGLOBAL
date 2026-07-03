@@ -17,32 +17,24 @@ export default function CustomCursor() {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    const handleElementHover = () => setIsHovering(true);
-    const handleElementLeave = () => setIsHovering(false);
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const isInteractive = target?.closest?.(
+        "a, button, input, select, textarea, [role='button'], .cursor-pointer"
+      );
+      setIsHovering(!!isInteractive);
+    };
 
     window.addEventListener("mousemove", updateMousePosition);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
-
-    // Add hover effect to interactive elements
-    const interactiveElements = document.querySelectorAll(
-      "a, button, input, select, textarea, [role='button']"
-    );
-
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleElementHover);
-      el.addEventListener("mouseleave", handleElementLeave);
-    });
+    document.addEventListener("mouseover", handleMouseOver);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
-
-      interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleElementHover);
-        el.removeEventListener("mouseleave", handleElementLeave);
-      });
+      document.removeEventListener("mouseover", handleMouseOver);
     };
   }, [isVisible]);
 
