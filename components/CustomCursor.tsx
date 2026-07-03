@@ -44,13 +44,13 @@ export default function CustomCursor() {
     <>
       {/* Small dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-blue-600 rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-3 h-3 bg-[#91bf3e] rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_#91bf3e]"
         style={{
           opacity: isVisible ? 1 : 0,
         }}
         animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
           scale: isHovering ? 0 : 1,
         }}
         transition={{
@@ -62,21 +62,23 @@ export default function CustomCursor() {
 
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-neutral-400/50 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[9998] flex items-center justify-center"
         style={{
           opacity: isVisible ? 1 : 0,
         }}
         animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
+          x: mousePosition.x - 24,
+          y: mousePosition.y - 24,
           scale: isHovering ? 1.5 : 1,
-          borderColor: isHovering ? "rgba(59, 130, 246, 0.5)" : "rgba(163, 163, 163, 0.5)",
+          border: isHovering ? "1px solid rgba(145, 191, 62, 0.2)" : "1px solid rgba(145, 191, 62, 0.5)",
+          backgroundColor: isHovering ? "rgba(145, 191, 62, 0.1)" : "rgba(0, 0, 0, 0)",
+          backdropFilter: isHovering ? "blur(4px)" : "blur(0px)",
         }}
         transition={{
           type: "spring",
-          stiffness: 100,
-          damping: 20,
-          mass: 0.8,
+          stiffness: 150,
+          damping: 15,
+          mass: 0.5,
         }}
       />
     </>

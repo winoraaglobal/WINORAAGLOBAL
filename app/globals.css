@@ -60,11 +60,6 @@ html, body {
   scrollbar-width: none;  /* Firefox */
   caret-color: transparent; /* Hides accidental text cursors */
   scroll-behavior: smooth; /* Enables smooth native scrolling for anchor links */
-  cursor: none !important;
-}
-
-* {
-  cursor: none !important;
 }
 
 /* Typography Scale */
