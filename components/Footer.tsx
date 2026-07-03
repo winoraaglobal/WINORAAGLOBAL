@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
@@ -13,6 +13,26 @@ const Footer = () => {
   const [notification, setNotification] = useState<{message: string, type: 'success' | 'error'} | null>(null);
   const pathname = usePathname();
   const bgColor = pathname === '/' ? '#d3d6da' : 'transparent';
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#contact') {
+        setIsContactModalOpen(true);
+      }
+    };
+    
+    handleHashChange(); // Check on mount
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+    if (window.location.hash === '#contact') {
+      window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+  };
 
   const showNotification = (message: string, type: 'success' | 'error') => {
     setNotification({ message, type });
@@ -55,7 +75,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer id="contact" className="w-full relative z-20 flex flex-col transition-colors duration-300" style={{ backgroundColor: bgColor }}>
+      <footer id="footer-contact" className="w-full relative z-20 flex flex-col transition-colors duration-300" style={{ backgroundColor: bgColor }}>
         {/* PART 1: ROUNDED CTA PANEL */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -381,7 +401,7 @@ const Footer = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              onClick={() => setIsContactModalOpen(false)}
+              onClick={closeContactModal}
               className="absolute inset-0 bg-black/70 backdrop-blur-md"
             />
             
@@ -400,7 +420,7 @@ const Footer = () => {
                 <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-blue-400/20 rounded-full blur-3xl"></div>
 
                 <button 
-                  onClick={() => setIsContactModalOpen(false)}
+                  onClick={closeContactModal}
                   className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center bg-black/20 hover:bg-black/40 text-white rounded-full transition-all duration-300 hover:rotate-90 backdrop-blur-md z-20"
                 >
                   <X size={18} strokeWidth={2.5} />
